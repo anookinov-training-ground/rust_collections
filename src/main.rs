@@ -59,4 +59,31 @@ fn main() {
         SpreadsheetCell::Float(10.12),
     ];
     println!("{:#?}", row);
+
+    let mut s = String::new();
+    println!("{}", s);
+    s = "Hello world!".to_string();
+    println!("{}", s);
+
+    let data = "initial contents";
+    let s = data.to_string();
+    println!("{}", s);
+    let s = "initial contents".to_string(); // the method also works on a literal directly
+    println!("{}", s);
+    let s = String::from("initial contents");
+    println!("{}", s);
+
+    let _hello = String::from("السلام عليكم");
+    let _hello = String::from("Dobrý den");
+    let _hello = String::from("Hello");
+    let _hello = String::from("שָׁלוֹם");
+    let _hello = String::from("नमस्ते");
+    let _hello = String::from("こんにちは");
+    let _hello = String::from("안녕하세요");
+    let _hello = String::from("你好");
+    let _hello = String::from("Olá");
+    let _hello = String::from("Здравствуйте");
+    let _hello = String::from("Hola");
+    let hello = String::from("สวัสดี");
+    println!("{}", hello);
 }
