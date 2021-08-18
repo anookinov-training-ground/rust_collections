@@ -86,4 +86,65 @@ fn main() {
     let _hello = String::from("Hola");
     let hello = String::from("สวัสดี");
     println!("{}", hello);
+
+    let mut s2 = String::from("foo");
+    s2.push_str("bar");
+    println!("s2 is {}", s2);
+
+    let mut s3 = String::from("foo");
+    let s4 = "bar";
+    s3.push_str(s4);
+    println!("s4 is {}", s4);
+
+    let mut s5 = String::from("lo");
+    s5.push('l');
+    println!("s5 is {}", s5);
+
+    let s6 = String::from("Hello, ");
+    let s7 = String::from("world!");
+    // + operator uses the add method that looks something like `fn add(self, s: &str) -> String {}`
+    let s8 = s6 + &s7; // note s6 has been moved here and con no longer be used
+    println!("s8 is {}", s8);
+
+    let s9 = String::from("tic");
+    let s10 = String::from("tac");
+    let s11 = String::from("toe");
+    let s12 = s9 + "-" + &s10 + "-" + &s11;
+    println!("s12 is {}", s12);
+
+    let s13 = String::from("tic");
+    let s14 = String::from("tac");
+    let s15 = String::from("toe");
+    let s16 = format!("{}-{}-{}", s13, s14, s15);
+    println!("s16 is {}", s16);
+
+    // let s17 = String::from("hello");
+    // let h = s17[0]; // error - Rust strings don't support indexing
+
+    let hello = String::from("Hola");
+    println!("{}", hello.len());
+
+    let hello = String::from("Здравствуйте");
+    println!("{}", hello.len());
+    // let answer = &hello[0]; // error - Rust strings don't support indexing
+    let answer = &hello[0..4];
+    println!("{}", answer);
+    // let answer = &hello[0..1];
+    // println!("{}", answer); // panic as byte index 1 is not a char boundary
+
+    for c in "नमस्ते".chars() {
+        println!("{}", c);
+    }
+
+    for c in "สวัสดี".chars() {
+        println!("{}", c);
+    }
+
+    for b in "नमस्ते".bytes() {
+        println!("{}", b);
+    }
+
+    for b in "สวัสดี".bytes() {
+        println!("{}", b);
+    }
 }
